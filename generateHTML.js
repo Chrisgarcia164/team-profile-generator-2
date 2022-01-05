@@ -2,13 +2,13 @@ const generateManager = function (manager) {
   console.log("generating manager");
   return `
   <div class="card">
-          <h2>${manager.name}</h2>
+          <h2 class="name">${manager.name}</h2>
           <div>
             <ul>
               <li>Manager</li>
-              <li>${manager.id}</li>
-              <li>${manager.email}</li>
-              <li>${manager.office}</li>
+              <li>id: ${manager.id}</li>
+              <li>Email:${manager.email}</li>
+              <li>Office Number${manager.office}</li>
             </ul>
           </div>
         </div>
@@ -20,13 +20,13 @@ const generateIntern = function (intern) {
   console.log("generating intern");
   return `
   <div class="card">
-  <h2>${intern.name}</h2>
+  <h2 class="name">${intern.name}</h2>
   <div>
     <ul>
       <li>Intern</li>
-      <li>${intern.id}</li>
-      <li>${intern.email}</li>
-      <li>${intern.school}</li>
+      <li>id: ${intern.id}</li>
+      <li>Email: ${intern.email}</li>
+      <li>School: ${intern.school}</li>
     </ul>
   </div>
 </div>
@@ -39,13 +39,13 @@ const generateEngineer = function (engineer) {
   console.log("generating engineer");
   return `
   <div class="card">
-  <h2>${engineer.name}</h2>
+  <h2 class="name">${engineer.name}</h2>
   <div>
     <ul>
       <li>Engineer</li>
-      <li>${engineer.id}</li>
-      <li>${engineer.email}</li>
-      <li>${engineer.school}</li>
+      <li>id: ${engineer.id}</li>
+      <li>email: ${engineer.email}</li>
+      <li>github: ${engineer.github}</li>
     </ul>
   </div>
 </div>
@@ -81,7 +81,8 @@ const generatePage = function (team) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Team profile generator</title>
   </head>
   <body>
     <header>
