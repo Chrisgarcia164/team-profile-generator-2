@@ -4,6 +4,7 @@ const Manager = require("./lib/Manager");
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const generateHTML = require("./generateHTML");
 const team = [];
 
 inquirer
@@ -57,6 +58,15 @@ const addNewMember = () => {
           break;
         case false:
           console.log("no");
+          console.log(team);
+          const page = generateHTML(team);
+          console.log(page);
+          fs.writeFile("./build.html", page, (err) => {
+            if (err) {
+              console.log(err);
+              return;
+            } else console.log("page loading ");
+          });
       }
     });
 };
@@ -133,7 +143,7 @@ const engineerPrompt = () => {
       },
       {
         type: "input",
-        message: "what is the engineer's id",
+        message: "what is the engineer's email",
         name: "email",
       },
       {
